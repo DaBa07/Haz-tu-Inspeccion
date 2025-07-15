@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Inspección de Elementos de Seguridad</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(-45deg, #fffbe0, #f9f9f9, #fffbe0, #fff5cc);
+            background-size: 400% 400%;
+            animation: movimientoFondo 15s ease infinite;
+            z-index: -1;
+        }
+
+        @keyframes movimientoFondo {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+
+        .barra {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #FFD700;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .barra-contenido {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            height: 50px;
+            width: auto;
+        }
+
+        .titulo-banner {
+            font-family: 'Pacifico', cursive;
+            font-size: 24px;
+            color: #333;
+            font-weight: normal;
+            text-align: center;
+            margin: 0 auto;
+            flex: 1;
+        }
+
+        .contenido {
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: flex-start;
+            gap: 20px;
+            padding: 120px 20px 20px;
+        }
+
+        .card {
+            width: 250px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            background-color: #fff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .titulo-imagen {
+            width: 100%;
+            padding: 12px 5px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+            color: #333;
+            background-color: #fff8c9;
+            border-top: 2px solid #f1c40f;
+            transition: background-color 0.3s ease;
+        }
+
+        .card:hover .titulo-imagen {
+            background-color: #ffe66d;
+        }
+
+        .footer {
+            background-color: #333;
+            text-align: center;
+            padding: 20px 10px;
+            margin-top: auto;
+        }
+
+        .footer img {
+            max-width: 120px;
+            height: auto;
+        }
+
+        @media (max-width: 600px) {
+            .barra-contenido {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .logo {
+                margin-bottom: 8px;
+            }
+
+            .titulo-banner {
+                margin: 0;
+                font-size: 20px;
+            }
+
+            .card {
+                width: 90%;
+            }
+
+            .card img {
+                height: 200px;
+            }
+
+            .titulo-imagen {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="barra">
+        <div class="barra-contenido">
+            <img src="Imagenes/mccain.png" alt="Logo" class="logo">
+            <h1 class="titulo-banner">Inspección de Elementos de Seguridad</h1>
+        </div>
+    </div>
+
+    <div class="contenido">
+        <div class="card">
+            <a href="https://forms.office.com/r/9m010rp10Z" target="_blank">
+                <img src="Imagenes/BotiquinCarro.jpg" alt="Formulario 1">
+            </a>
+            <div class="titulo-imagen">🚘 Inspección Botiquín Vehicular</div>
+        </div>
+
+        <div class="card">
+            <a href="https://forms.office.com/r/4BxCz7HkNG" target="_blank">
+                <img src="Imagenes/Extintores.jpg" alt="Formulario 2">
+            </a>
+            <div class="titulo-imagen">🫲 Inspección Extintor</div>
+        </div>
+
+        <div class="card">
+            <a href="https://forms.office.com/r/AbKcA2Npcm" target="_blank">
+                <img src="Imagenes/Botiquines.jpg" alt="Formulario 3">
+            </a>
+            <div class="titulo-imagen">🩰 Inspección Botiquines</div>
+        </div>
+
+        <div class="card">
+            <a href="https://forms.office.com/r/XPwaTjqiXJ" target="_blank">
+                <img src="Imagenes/Camilla.jpg" alt="Formulario 4">
+            </a>
+            <div class="titulo-imagen">🛎️ Inspección Camillas</div>
+        </div>
+
+        <div class="card">
+            <a href="https://forms.office.com/r/vqz9bUStYg" target="_blank">
+                <img src="Imagenes/Duchas.jpg" alt="Formulario 5">
+            </a>
+            <div class="titulo-imagen">🚿 Inspección Duchas</div>
+        </div>
+
+        <div class="card">
+            <a href="https://forms.office.com/r/QjetWrY4Re" target="_blank">
+                <img src="Imagenes/Antiderrame.jpg" alt="Formulario 6">
+            </a>
+            <div class="titulo-imagen">🩰 Inspección Kit Antiderrames</div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <img src="Imagenes/familia.png" alt="Logo Footer">
+    </div>
+
+    <script>
+        window.addEventListener("scroll", function () {
+            var barra = document.querySelector(".barra");
+            if (window.scrollY > 10) {
+                barra.classList.add("scroll");
+            } else {
+                barra.classList.remove("scroll");
+            }
+        });
+    </script>
+</body>
+</html>
